@@ -1,5 +1,6 @@
 package com.xtx.provider;
 
+import com.xtx.RpcApplication;
 import com.xtx.common.service.UserService;
 import com.xtx.registry.LocalRegistry;
 import com.xtx.server.HttpServer;
@@ -13,7 +14,7 @@ public class EasyProviderExample {
 
         //启动web服务
         HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(8080);
+        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 
 }
